@@ -2502,7 +2502,7 @@ def BS_VALUE(df, quote=None, r=0.025, v=None):
         v (float | pandas.Series): 波动率，默认使用 df 中的 close 序列计算波动率
 
     Returns:
-        pandas.DataFrame: 返回的 DataFrame 包含 1 列, 是 "bs_price", 代表计算出来的期权理论价格
+        pandas.DataFrame: 返回的 DataFrame 包含 1 列, 是 "bs_price", 代表计算出来的期权理论价格, 与参数 df 行数相同
 
     Example1::
 
@@ -2565,7 +2565,7 @@ def OPTION_GREEKS(df, quote=None, r=0.025, v=None):
         v (float | pandas.Series): 波动率, 默认使用隐含波动率
 
     Returns:
-        pandas.DataFrame: 返回的 DataFrame 包含 5 列, 分别是 "delta", "theta", "gamma", "vega", "rho"
+        pandas.DataFrame: 返回的 DataFrame 包含 5 列, 分别是 "delta", "theta", "gamma", "vega", "rho", 与参数 df 行数相同
 
     Example::
 
@@ -2611,7 +2611,7 @@ def OPTION_VALUE(df, quote=None):
         quote (tqsdk.objs.Quote): 期权对象，如果不是期权类型的对象或者与 df 中期权合约不同，则返回序列值全为 nan
 
     Returns:
-        pandas.DataFrame | None: 返回的 DataFrame 包含 2 列, 是 "intrins" 和 "time", 代表内在价值和时间价值,
+        pandas.DataFrame: 返回的 DataFrame 包含 2 列, 是 "intrins" 和 "time", 代表内在价值和时间价值, 与参数 df 行数相同
 
     Example::
 
@@ -2651,7 +2651,7 @@ def OPTION_IMPV(df, quote=None, r=0.025, init_v=None):
         init_v (float): 初始对波动率的估计
 
     Returns:
-        pandas.DataFrame: 返回的 DataFrame 包含 1 列, 是"impv"
+        pandas.DataFrame: 返回的 DataFrame 包含 1 列, 是 "impv", 与参数 df 行数相同
 
     Example::
 
